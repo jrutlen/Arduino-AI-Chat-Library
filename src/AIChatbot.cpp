@@ -13,7 +13,7 @@ bool AIChatbot::connectWiFi(const char* ssid, const char* password, unsigned lon
     Serial.print("Connecting to WiFi: ");
     Serial.println(ssid);
 #else // ESP32
-    Serial.printf(F("Connecting to WiFi: %s\n"), ssid);
+    Serial.printf("Connecting to WiFi: %s\n", ssid);
 #endif
 
     WiFi.begin(ssid, password);
@@ -31,8 +31,8 @@ bool AIChatbot::connectWiFi(const char* ssid, const char* password, unsigned lon
         Serial.print("IP Address: ");
         Serial.println(WiFi.localIP().toString());
 #else // ESP32
-        Serial.println(F("\nWiFi Connected!"));
-        Serial.printf(F("IP Address: %s\n"), WiFi.localIP().toString().c_str());
+        Serial.println("\nWiFi Connected!");
+        Serial.printf("IP Address: %s\n", WiFi.localIP().toString().c_str());
 #endif
         return true;
     } else {
